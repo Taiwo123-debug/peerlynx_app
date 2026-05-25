@@ -1,0 +1,77 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #1a282d;
+    font-family: "Poppins", sans-serif;
+}
+nav {
+    padding: 20px;
+}
+nav div .windowHistory {
+    background-color: transparent;
+    border: 0px;
+    outline: none;
+    padding: 0px;
+    color: #ffffff;
+    font-size: 20px;
+    margin-left: -4px;
+}
+nav div .tutorName {
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 7px;
+    margin-top: 20px;
+}
+nav div .course {
+    color: #c2c6cc;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 600;
+}
+nav div .statusWrapper {
+    margin-top: 10px;
+}
+nav div .statusWrapper span {
+    color: #ffffff;
+    text-transform: capitalize;
+    font-size: 15px;
+}
+.container {
+    padding: 0px 20px 80px 20px;
+}
+.container .sessionContainer .sessionCard {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    display: grid;
+    row-gap: 10px;
+}
+.container .sessionContainer .sessionCard .sessionNumber {
+    color: #ffffff;
+}
+.container .sessionContainer .sessionCard .wrapper button {
+    float: left;
+    background-color: transparent;
+    outline: none;
+    padding: 10px;
+    border: 2px solid grey;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+.container .sessionContainer .sessionCard .wrapper span {
+    color: #ffffff;
+    font-size: 15px;
+}
+.container .badgeWrapper {
+    margin-top: 50px;
+    display: grid;
+    place-items: center;
+}
+.container .badgeWrapper .badgeText {
+    color: #ffffff;
+    font-size: 18px;
+}
+.container .badgeWrapper .badgeImage {
+    width: 130px;
+}

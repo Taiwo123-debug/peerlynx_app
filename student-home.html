@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/home-navbar.css">
+    <link rel="stylesheet" href="src/css/student-home.css">
+    <link rel="stylesheet" href="src/css/footer.css">
+    <link rel="shortcut icon" href="assets/icons/peerlynx-icon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>PeerLynx</title>
+</head>
+<body>
+    
+    <div class="container">
+        <nav class="navbar">
+            <div class="p"><span>p</span></div>
+            <div class="names">
+                <span class="appName">
+                    <span class="peer">PeerLynx</span>
+                </span>
+                <span class="welcome">Welcome, <span class="username"></span></span>
+            </div>
+            <button class="notifications">
+                <i class="fa-regular fa-bell"></i>
+                <span class="notificationCount">1</span>
+            </button>
+        </nav>
+
+        <form action="">
+            <div class="wrapper">
+                <button class="findTutorBtn"><i class="fa fa-search"></i></button>
+                <input type="text" placeholder="Find tutors by topic..." class="topicInput">
+            </div>
+        </form>
+
+        <div class="banner">
+            <div class="text">
+                <span>What skills do you want<br>to learn?</span>
+                <a href="category.html">explore skills</a>
+            </div>
+        </div>
+
+        <div class="recommendationsContainer">
+            <div class="header">
+                <span>Recommended</span> <a href="all-recommendations.html">See all</a>
+            </div>
+
+            <div class="recommendationsWrapper"></div>
+        </div>
+        
+    </div>
+
+    <footer>
+        <div class="wrapper">
+            <a class="homeBtn" href="student-home.html">
+                <img src="./assets/images/home-icon.png" alt="">
+                <span style="color: #457588;">home</span>
+            </a>
+            <a class="categoryBtn" href="category.html">
+                <img src="./assets/images/categories-icon.png" alt="">
+                <span>category</span>
+            </a>
+            <a class="chatBtn" href="chat.html">
+                <img src="./assets/images/chat-icon.png" alt="">
+                <span>chat</span>
+            </a>
+            <a class="offersBtn" href="offers.html">
+                <img src="./assets/images/offers-icon.png" alt="">
+                <span>offers</span>
+            </a>
+            <a class="profileBtn" href="profile.html">
+                <img src="./assets/images/profile-icon.png" alt="">
+                <span>profile</span>
+            </a>
+        </div>
+    </footer>
+
+    <script type="module" src="src/js/student-home.js"></script>
+</body>
+</html>

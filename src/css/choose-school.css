@@ -1,0 +1,137 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #1a282d;
+}
+.container .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #a370f7;
+    border-radius: 0px 0px 20px 20px;
+}
+.container .header .text {
+    text-align: center;
+    color: #f3e8ff;
+    display: grid;
+    row-gap: 15px;
+    padding: 30px 0px;
+}
+.container .header .text .name {
+    font-size: 40px;
+    font-family: "Mochiy Pop P One", sans-serif;
+    font-weight: 500;
+}
+.container .header .text .chooseUni {
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+.container .universitiesContainer {
+    padding: 30px 30px 0px 30px;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 20px;
+    row-gap: 15px;
+    max-height: 52vh;
+    min-height: 52vh;
+    align-items: start;
+    align-content: start;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: auto;
+}
+.container .universitiesContainer .university {
+    padding: 20px 5px;
+    border: 2px solid #f3e8ff;
+    color: #f3e8ff;
+    border-radius: 6px;
+    height: fit-content;
+    cursor: pointer;
+    transition: 1s;
+}
+.container .universitiesContainer .university:hover {
+    background-color: #a370f7;
+}
+.container .universitiesContainer .university .locationIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 14%;
+}
+.container .universitiesContainer .university .locationIcon img {
+    width: 26px;
+}
+.container .universitiesContainer .university .schoolWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    float: left;
+}
+.container .universitiesContainer .university .schoolWrapper span {
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+}
+.container .universitiesContainer .university .chooseWrapper {
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14%;
+    float: right;
+}
+.container .universitiesContainer .university .chooseWrapper button {
+    background-color: transparent;
+    border: 2px solid #f3e8ff;
+    padding: 0px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+}
+.userTypeMessage {
+    text-align: center;
+    opacity: 0;
+    font-size: 17px;
+    color: #f3e8ff;
+    font-family: "Poppins", sans-serif;
+}
+.container .base {
+    display: grid;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    bottom: 0;
+}
+.container .base button {
+    padding: 15px 0px;
+    border-radius: 25px;
+    background-color: #a370f7;
+    text-transform: capitalize;
+    color: #f3e8ff;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    outline: none;
+    border: 0px;
+    font-weight: 600;
+    transition: 1.2s;
+}
+.container .base button:hover {
+    background-color: #f3e8ff;
+    color: #1c2833;
+}
+
+@media (max-width: 800px) {
+    .container .universitiesContainer {
+        padding: 30px 10px 0px 10px;
+        grid-template-columns: auto;
+    }   
+}

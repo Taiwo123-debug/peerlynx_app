@@ -1,0 +1,119 @@
+html {
+    background-color: #1a282d;
+}
+body {
+    background-color: #1a282d;
+    margin: 0px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+.container .banner {
+    height: 180px;
+    background-image: url(../../assets/images/skill-profile-banner.png);
+    background-size: cover;
+    background-position: center;
+    padding: 20px 10px;
+    box-sizing: border-box;
+}
+.container .banner  button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0px;
+}
+.container .banner button i {
+    font-size: 20px;
+    color: #f3e8ff;
+}
+.container .tutorContainer {
+    padding: 20px 15px;
+}
+.container .tutorContainer .skillProfile {
+    display: flex;
+    gap: 20px;
+}
+.container .tutorContainer .skillProfile .imageContainer {
+    display: flex;
+    align-items: center;
+}
+.container .tutorContainer .skillProfile .imageContainer div {
+    width: 60px;
+    position: relative;
+    overflow: hidden;
+}
+.container .tutorContainer .skillProfile .imageContainer div img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #a370f7;
+    object-fit: cover;
+}
+.container .tutorContainer .skillProfile .infoContainer {
+    display: grid;
+}
+.container .tutorContainer .skillProfile .infoContainer .tutorName {
+    color: #f3e8ff;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.container .tutorContainer .skillProfile .infoContainer .skillName, .tutorEmail {
+    color: #c2c6cc;
+    font-size: 16px;
+}
+.container .tutorContainer .skillProfile .infoContainer .alumniSpan, .ongoingSpan {
+    color: #c2c6cc;
+    font-size: 13px;
+}
+.container .tutorContainer .skillProfile .infoContainer .alumniSpan span, .ongoingSpan span {
+    color: #a370f7;
+}
+.container .tutorContainer .rateAndAvail {
+    display: grid;
+    row-gap: 4px;
+    padding: 10px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    margin-top: 15px;
+    background-color: rgba(200, 200, 200, 0.2);
+    color: #f3e8ff;
+}
+.container .tutorContainer .rateAndAvail label {
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.container .tutorContainer .rateAndAvail span {
+    font-size: 14px;
+    color: #c2c6cc;
+}
+.container .tutorContainer .skillDescription {
+    margin-top: 15px;
+}
+.container .tutorContainer .skillDescription label {
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #f3e8ff;
+}
+.container .tutorContainer .skillDescription  .description {
+    padding: 10px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    margin-top: 5px;
+    background-color: rgba(200, 200, 200, 0.2);
+    color: #f3e8ff;   
+    font-size: 14px;
+}
+.container .tutorContainer .buttonWrapper {
+    margin-top: 30px;
+    display: grid;
+}
+.container .tutorContainer .buttonWrapper button {
+    background-color: #a370f7;
+    color: #f3e8ff;
+    border-radius: 25px;
+    padding: 15px 0px;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+    border: 0px;
+}

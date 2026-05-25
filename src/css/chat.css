@@ -1,0 +1,120 @@
+html {
+    background-color: #1a282d;
+}
+body {
+    /* height: 100vh;
+    overflow: hidden; */
+    list-style: none;
+    background-color: #1a282d;
+    margin: 0px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+nav {
+    padding: 25px 10px 10px 10px;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #1a282d;
+}
+nav span {
+    color: #f3e8ff;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+nav .chatForm {
+    display: grid;
+    margin-top: 10px;
+}
+nav .chatForm input {
+    border: 0px;
+    outline: none;
+    height: 45px;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: #334b53;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #f3e8ff;
+}
+nav .chatForm input::placeholder {
+    color: #c2c6cc;
+}
+.chatContainer {
+    padding: 130px 0px 100px 0px;
+    display: grid;
+    row-gap: 13px;
+}
+.chatContainer .emptyChat {
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: 60px;
+    text-align: center;
+}
+.chatContainer .chats {
+   display: flex;
+   gap: 15px;
+   contain: content;
+   padding: 6px 10px;
+}
+.chatContainer .chats:hover {
+   background-color: #334b53;
+}
+.chatContainer .chats .imageContainer {
+    width: 40px;
+}
+.chatContainer .chats .imageContainer .imageWrapper {
+    width: inherit;
+    position: relative;
+}
+.chatContainer .chats .imageContainer .imageWrapper img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #a370f7;
+}
+.chatContainer .chats .textContainer {
+    display: grid;
+}
+.chatContainer .chats .textContainer span {
+    color: #f3e8ff;
+}
+.chatContainer .chats .textContainer span.usernameEl {
+    font-size: 16px;
+    margin-bottom: -5px;
+}
+.chatContainer .chats .textContainer span.msgEl {
+    font-size: 13px;
+}
+.chatContainer .chats .timeContainer {
+    text-align: right;
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+}
+.chatContainer .chats .timeContainer span {
+    color: #c2c6cc;
+    font-size: 13px;
+}
+.unreadDot {
+    width: 10px;
+    height: 10px;
+    background: #a855f7; /* purple */
+    border-radius: 50%;
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 4px;
+}
+
+.chats {
+    position: relative;
+}
+
+.unreadDot.active {
+    display: block;
+}

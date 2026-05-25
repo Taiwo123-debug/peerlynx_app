@@ -1,0 +1,169 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #1a282d;
+}
+.container {
+    padding: 20px 10px;
+}
+.container nav a {
+    text-decoration: none;
+}
+.container nav a i {
+    font-size: 25px;
+    color: #f3e8ff;
+}
+.container nav .text {
+    margin-top: 20px;
+    contain: content;
+}
+.container nav .text .skillName {
+    float: left;
+    color: #f3e8ff;
+    font-size: 30px;
+    font-family: "Mochiy Pop P One", sans-serif;
+    font-weight: 500;
+}
+.container nav .text button {
+    float: right;
+    background-color: transparent;
+    border: 0px;
+    outline: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #f3e8ff;
+    margin-top: 10px;
+}
+.container nav form {
+    padding: 10px 0px;
+}
+.container nav form .wrapper {
+    background-color: #334b53;
+    height: 50px;
+    border-radius: 6px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.container nav form .wrapper button {
+    padding: 0px;
+    background-color: transparent;
+    outline: none;
+    border: 0px;
+    float: left;
+}
+.container nav form .wrapper button i {
+    color: grey;
+    font-size: 30px;
+}
+.container nav form .wrapper input {
+    width: 270px;
+    height: 35px;
+    margin-left: 5px;
+    float: left;
+    font-size: 19px;
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
+    background-color: transparent;
+    outline: none;
+    border: 0px;
+}
+.container nav form .wrapper input::placeholder {
+    color: #f3e8ff;
+}
+.container .skillContainer {
+    display: grid;
+    row-gap: 20px;
+    height: 60vh;
+    align-items: start;
+    align-content: start;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: auto;
+    padding: 10px 0px;
+}
+.container .skillContainer .skills {
+    border: 1px solid #f3e8ff;
+    padding: 16px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 1s;
+}
+.container .skillContainer .skills:hover {
+    background-color: #0c1618;
+}
+.container .skillContainer .skills .imageWrapper {
+    float: left;
+    width: 55px;
+    height: 55px;
+    position: relative;
+    text-align: center;
+    background-color: #a370f7;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.container .skillContainer .skills .imageWrapper img {
+    width: inherit;
+    height: inherit;
+    object-fit: contain;
+}
+.container .skillContainer .skills .skillsWrapper {
+    float: left;
+    padding: 0px 10px;
+    display: grid;
+    row-gap: 6px;
+    line-height: 17px;
+}
+.container .skillContainer .skills .skillsWrapper .skill {
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+.container .skillContainer .skills .skillsWrapper .tutorName {
+    color: rgb(191, 189, 189);
+    font-size: 16px;
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+.container .skillContainer .skills .skillsWrapper .price {
+    border-radius: 5px;
+    color: #f3e8ff;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    width: fit-content;
+}
+.container .skillContainer .skills .durationAndStars {
+    float: right;
+}
+.container .skillContainer .skills .durationAndStars .top {
+    color: #b78df9;
+    font-size: 17px;
+}
+.container .skillContainer .skills .durationAndStars .top span {
+    color: #b78df9;
+}
+.container .skillContainer .skills .durationAndStars .stars {
+    color: #f3e8ff;
+    font-size: 17px;
+    font-family: "Poppins", sans-serif;
+    padding: 4px 8px;
+    border: 1px solid #d2c0ee;
+    border-radius: 5px;
+    background-color: #334b53;
+    width: fit-content;
+    float: right;
+    margin-top: 3px;
+}
+.container .skillContainer .skills .durationAndStars .stars i {
+    color: gold;
+    float: right;
+    margin-top: 2px;
+    margin-left: 4px;
+}

@@ -1,0 +1,93 @@
+html {
+    background-color: #1a282d;
+}
+body {
+    background-color: #1a282d;
+    margin: 0px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+.container {
+    padding: 15px 10px 60px 10px;
+    position: relative;
+}
+.container .navbar {
+    padding-bottom: 20px;
+    contain: content;
+}
+.container .navbar .p {
+    float: left;
+    background-color: #a370f7;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    line-height: 1;
+    height: 48px;
+    width: 48px;
+    color: #f3e8ff;
+    font-size: 32px;
+    font-family: "Mochiy Pop P One", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    border-radius: 50%;
+}
+.container .navbar .names {
+    float: left;
+    padding: 0px 10px;
+    display: grid;
+    color: #ffffff;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 14px;
+}
+.container .navbar .names .appName {
+    font-family: "Mochiy Pop P One", sans-serif;
+}
+.container .navbar .names .welcome {
+    font-family: "Poppins", sans-serif;
+}
+.container .navbar .notifications {
+    float: right;
+    background-color: transparent;
+    border: 0px;
+    outline: none;
+    position: relative;
+    padding: 2px 0px;
+}
+.container .navbar .notifications i {
+    font-size: 25px;
+    color: #f3e8ff;
+}
+.container .navbar .notifications span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    background-color: red;
+    font-size: 14px;
+    padding: 1px 3px;
+    border-radius: 50%;
+    color: #ffffff;
+    text-align: center;
+}
+.container .banner .text {
+    display: grid;
+    row-gap: 10px;
+    padding: 0px 15px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+.container .banner .text span {
+    color: #ffffff;
+    font-size: 18px;
+}
+.container .banner .text a {
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #f3e8ff;
+    border-radius: 6px;
+    width: fit-content;
+    text-transform: capitalize;
+    color: #8c74a5;
+}

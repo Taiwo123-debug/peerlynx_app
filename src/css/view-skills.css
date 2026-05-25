@@ -1,0 +1,138 @@
+html {
+    background-color: #1a282d;
+}
+body {
+    overflow: hidden;
+    list-style: none;
+    background-color: #1a282d;
+    margin: 0px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+.container {
+    padding: 15px 10px 60px 10px;
+}
+.container nav button.back {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0px;
+}
+.container nav button.back i {
+    color: #f3e8ff;
+    font-size: 20px;
+}
+.container nav div {
+    margin-top: 20px;
+}
+.container nav div span {
+    color: #f3e8ff;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-family: "Mochiy Pop P One", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.container .skillSearchForm {
+    padding: 10px 0px;
+    display: grid;
+}
+.container .skillSearchForm input {
+    height: 50px;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+.container .skillSearchForm input:focus {
+    border-color: #a370f7;
+}
+.container .skillSearchForm input::placeholder {
+    font-size: 16px;
+    color: #c2c6cc;
+}
+.container .searchResult {
+    margin-top: 10px;
+}
+.container .searchResult .noSkill {
+    height: 20vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+}
+.container .searchResult .noSkill p {
+    color: #f3e8ff;
+    font-size: 18px;
+    text-align: center;
+}
+.container .searchResult .noSkill a {
+    text-decoration: none;
+    color: #f3e8ff;
+    background-color: #a370f7;
+    padding: 15px 30px;
+    border-radius: 15px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.container .searchResult .skillsContainer {
+    display: grid;
+    align-items: start;
+    row-gap: 10px;
+    padding-bottom: 40px;
+    max-height: 60vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.container .searchResult .skillsContainer .skillCard {
+    padding: 7px;
+    background-color: rgb(191, 189, 189, 0.2);
+    border-radius: 8px;
+    color: #1a282d;
+    cursor: pointer;
+}
+.container .searchResult .skillsContainer .skillCard .tutorName {
+    font-size: 14px;
+    color: #f3e8ff;
+}
+.container .searchResult .skillsContainer .skillCard .tutorEmail {
+    display: none;
+}
+.container .searchResult .skillsContainer .skillCard .skillName {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #f3e8ff
+}
+.container .searchResult .skillsContainer .skillCard .description {
+    font-size: 14px;
+    color: #f3e8ff
+}
+.container .searchResult .skillsContainer .skillCard .wrapper {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+.container .searchResult .skillsContainer .skillCard .wrapper button {
+    border: 0px;
+    outline: none;
+    padding: 3px;
+    border-radius: 3px;
+}
+.container .searchResult .skillsContainer .skillCard .wrapper .highestRating i {
+    font-size: 10px;
+}
+.container .searchResult .skillsContainer .skillCard .wrapper .highestRating .star-inactive {
+    color: grey;
+}

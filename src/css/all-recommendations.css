@@ -1,0 +1,120 @@
+html {
+    background-color: #1a282d;
+}
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Poppins", sans-serif;
+}
+.container {
+    padding: 10px 10px 60px 10px;
+}
+.container .header {
+    color: #f3e8ff;
+    padding: 10px 0px;
+    text-align: center;
+}
+.container .header a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    padding: 0px 10px;
+}
+.container .header span {
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 600;
+}
+.container .recommendationsContainer {
+    margin-top: 30px;
+}
+.container .recommendationsContainer .recommendationsWrapper {
+    padding-bottom: 20px;
+}
+.container .recommendationsContainer .recommendationsWrapper::-webkit-scrollbar{
+    display: none;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations {
+    contain: content;
+    margin-top: 8px;
+    padding: 11px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid grey;
+    transition: 1s;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations:hover {
+    background-color: rgb(191, 189, 189, 0.2);
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .imageWrapper {
+    float: left;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    background-color: #a370f7;
+    border-radius: 50%;
+    margin-top: 2px;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .imageWrapper img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .skillsWrapper {
+    float: left;
+    padding: 0px 10px;
+    display: grid;
+    row-gap: 6px;
+    line-height: 17px;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .skillsWrapper .skill {
+    color: #ffffff;
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .skillsWrapper .tutorName {
+    color: rgb(191, 189, 189);
+    font-size: 14px;
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .skillsWrapper .price {
+    border-radius: 5px;
+    background-color: #c2c6cc;
+    padding: 3px;
+    color: #000000;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    width: fit-content;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .durationAndStars {
+    float: right;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .durationAndStars .top span {
+    color: #f3e8ff;
+    font-weight: 400;
+    font-size: 14px;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .durationAndStars .stars {
+    color: #f3e8ff;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    padding: 4px 8px;
+    border-radius: 5px;
+    background-color: #334b53;
+    width: fit-content;
+    float: right;
+    margin-top: 3px;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .durationAndStars .stars i {
+    color: gold;
+    float: right;
+    margin-top: 2px;
+    margin-left: 4px;
+}

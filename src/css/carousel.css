@@ -1,0 +1,146 @@
+*{
+    overflow: hidden;
+    list-style: none;
+    padding: none;
+    margin: none;
+}
+html {
+    background-color: #1a282d;
+}
+body {
+    height: 100vh;
+    background-color: #1a282d;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+.skipSlide {
+    text-align: right;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    padding: 25px;
+    box-sizing: border-box;
+    contain: content;
+}
+.skipSlide a {
+    color: #f3e8ff;
+    text-decoration: none;
+    font-size: 18px;
+}
+/* Carousel main container */
+.carousel-container {
+    width: 100%;
+    height: 91%;
+    position: relative;
+    contain: content;
+    cursor: pointer;
+}
+
+/* The sliding inner container holding all slides */
+.carousel-inner {
+    display: flex;
+    width: 400%; /* Total width for 4 slides */
+    height: 100%;
+    transition: transform 0.3s ease-in-out; /* Smooth sliding transition */
+    contain: content;
+}
+
+/* Individual slide styles */
+.slide {
+    width: 25%; /* Width of a single slide (1/4 of total inner width) */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #ffffff; /* Default white text */
+    position: relative;
+}
+
+/* Styling for content based on provided images */
+.slide-image {
+    max-width: 85%;
+    margin-bottom: 20px;
+}
+
+.slide-title {
+    font-size: 22px;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.slide-description {
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #aeb6bf; /* Lighter description text */
+}
+
+.slide .action-button {
+    width: 80%;
+    background-color: #a370f7; 
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    transition: 1.2s;
+    margin-top: 20px;
+}
+
+.slide a.getStarted {
+    text-decoration: none;
+    width: 80%;
+    background-color: #a370f7;
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: 1.2s;
+    margin-top: 20px;
+}
+
+.action-button:hover {
+    background-color: #f3e8ff;
+    color: #1c2833;
+}
+/* Dynamic indicator styles */
+.carousel-indicators-container {
+   display: grid;
+   place-content: center;
+}
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #aeb6bf;
+    cursor: pointer;
+}
+
+.indicator-dot.active {
+    background-color: #a569bd; 
+    width: 20px;
+    border-radius: 5px; 
+}

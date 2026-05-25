@@ -1,0 +1,163 @@
+.container form {
+    padding-bottom: 10px;
+}
+.container form .wrapper {
+    background-color: #334b53;
+    height: 50px;
+    border-radius: 6px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.container form .wrapper button {
+    padding: 0px;
+    background-color: transparent;
+    outline: none;
+    border: 0px;
+    float: left;
+    margin-top: 5px;
+}
+.container form .wrapper button i {
+    color: grey;
+    font-size: 25px;
+}
+.container form .wrapper input {
+    width: 270px;
+    height: 35px;
+    margin-left: 5px;
+    font-size: 16px;
+    float: left;
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+.container form .wrapper input::placeholder {
+    color: #c2c6cc;
+    font-size: 16px;
+}
+
+.container .banner {
+    width: 100%;
+    border-radius: 20px;
+    background-color: #a370f7;
+    height: 160px;
+    background-image: url(../../assets/images/banner-image1.png);
+    background-position: right;
+    background-size: 30%;
+    background-repeat: no-repeat;
+    display: grid;
+    align-items: center; 
+    justify-items: start;
+    margin-top: 10px;
+}
+.container .recommendationsContainer {
+    margin-top: 10px;
+}
+.container .recommendationsContainer .header {
+    contain: content;
+}
+.container .recommendationsContainer .header span {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 18px;
+}
+.container .recommendationsContainer .header a {
+    color: #c2c6cc;
+    text-decoration: none;
+    float: right;
+}
+.container .recommendationsContainer .recommendationsWrapper {
+    padding-bottom: 20px;
+    max-height: 34vh;
+    min-height: 34vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.container .recommendationsContainer .recommendationsWrapper::-webkit-scrollbar{
+    display: none;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations {
+    contain: content;
+    margin-top: 8px;
+    padding: 11px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid grey;
+    transition: 1s;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations:hover {
+    background-color: rgb(191, 189, 189, 0.2);
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .imageWrapper {
+    float: left;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    background-color: #a370f7;
+    border-radius: 50%;
+    margin-top: 2px;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .imageWrapper img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .skillsWrapper {
+    float: left;
+    padding: 0px 10px;
+    display: grid;
+    row-gap: 6px;
+    line-height: 17px;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .skillsWrapper .skill {
+    color: #ffffff;
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .skillsWrapper .tutorName {
+    color: rgb(191, 189, 189);
+    font-size: 14px;
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .skillsWrapper .price {
+    border-radius: 5px;
+    background-color: #c2c6cc;
+    padding: 3px;
+    color: #000000;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    width: fit-content;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .durationAndStars {
+    float: right;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .durationAndStars .top span {
+    color: #f3e8ff;
+    font-weight: 400;
+    font-size: 14px;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .durationAndStars .stars {
+    color: #f3e8ff;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    padding: 4px 8px;
+    border-radius: 5px;
+    background-color: #334b53;
+    width: fit-content;
+    float: right;
+    margin-top: 3px;
+}
+.container .recommendationsContainer .recommendationsWrapper .recommendations .durationAndStars .stars i {
+    color: gold;
+    float: right;
+    margin-top: 2px;
+    margin-left: 4px;
+}

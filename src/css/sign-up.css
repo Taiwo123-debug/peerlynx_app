@@ -1,0 +1,203 @@
+*{
+    overflow: hidden;
+    list-style: none;
+}
+html {
+    background-color: #1a282d;
+}
+body {
+    height: 100vh;
+    background-color: #1a282d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 10px;
+    margin: 0px;
+}
+.container {
+    display: grid;
+    row-gap: 15px;
+    width: 400px;
+    margin-top: -50px;
+}
+a.back {
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 20px;
+}
+a.back i {
+    font-size: 25px;
+    color: #f3e8ff;
+}
+.container .headers {
+    text-align: center;
+    display: grid;
+    row-gap: 40px;
+}
+.container .headers .logo {
+    font-size: 65px;
+    margin-bottom: -20px;
+    font-family: "Mochiy Pop P One", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #A370F7;
+}
+.container .headers .texts {
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #F3E8FF;
+    line-height: 30px;
+}
+.container .more {
+    text-align: center;
+    color: #F3E8FF;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+
+}
+.container .more a {
+    text-decoration: none;
+    color: #E4CDFD;
+    margin-right: 20px;
+}
+.container .formContainer {
+    margin-top: 10px;
+    display: grid;
+    row-gap: 15px;
+}
+.container .formContainer .firstName, .lastName, .email {
+    border: 1px solid grey;
+    border-radius: 6px;
+    outline: none;
+    height: 50px;
+    background-color: transparent;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 17px;
+    color: #f3e8ff;
+}
+.container .formContainer .firstName:focus, .lastName:focus, .email:focus{
+    border-color: #A370F7;
+}
+.container .formContainer .firstName::placeholder, .lastName::placeholder, .email::placeholder{
+    color: grey;
+}
+.container .formContainer .passwordWrapper {
+    height: 50px;
+    border: 1px solid grey;
+    border-radius: 6px;
+}
+.container .formContainer .passwordWrapper input {
+    height: inherit;
+    width: 80%;
+    float: left;
+    outline: none;
+    background-color: transparent;
+    border: 0px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 17px;
+    color: #f3e8ff;
+}
+.container .formContainer .passwordWrapper input::placeholder {
+    color: grey;
+}
+.container .formContainer .otpWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.container .formContainer .otpWrapper input {
+    height: 45px;
+    width: 45px;
+    border-radius: 6px;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid grey;
+    padding: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 18px;
+    color: #f3e8ff;
+}
+.container .formContainer .otpWrapper input:focus {
+    border-color: #A370F7;
+}
+.container .formContainer .passwordWrapper button {
+    height: inherit;
+    width: 40px;
+    float: right;
+    outline: none;
+    cursor: pointer;
+    border: 0px;
+    background-color: transparent;
+    display: grid;
+    place-content: center;
+}
+.container .formContainer .passwordWrapper button img {
+    width: 30px;
+}
+.eyeClose {
+    display: none;
+}
+.container .formContainer .signMessage {
+    text-align: center;
+    color: #f3e8ff;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+.container .formContainer .signUpBtn, .signInBtn, .verifyEmailBtn, .OTPLoginBtn {
+    margin-top: 15px;
+    border-radius: 25px;
+    background-color: #a370f7;
+    color: #f3e8ff;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    outline: none;
+    border: 0px;
+    padding: 15px;
+    font-weight: 600;
+    transition: 1.2s;
+}
+.container .formContainer .signUpBtn:hover, .signInBtn:hover, .verifyEmailBtn:hover, .OTPLoginBtn:hover {
+    background-color: #f3e8ff;
+    color: #1c2833;
+}
+.container .formContainer .forgotPassword {
+    margin-top: 15px;
+    text-align: center;
+}
+.container .formContainer .forgotPassword a {
+    color: #E4CDFD;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+}
+.container .formContainer .googleSignContainer {
+    padding: 20px;
+    text-align: center;
+    display: grid;
+}
+.container .formContainer .googleSignContainer span {
+    color: #f3e8ff;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 500px) {
+    .container {
+        display: grid;
+        row-gap: 15px;
+        width: 100%;
+    }
+}

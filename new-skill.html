@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/new-skill.css">
+    <link rel="stylesheet" href="src/css/footer.css">
+    <link rel="shortcut icon" href="assets/icons/peerlynx-icon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>PeerLynx</title>
+</head>
+<body>
+    <div class="container">
+        <a href="category.html" class="back"><i class="fa-solid fa-angle-left"></i></a>
+        <div class="skillHeader">
+            <div class="p"><span>p</span></div>
+            <div class="title">Share <span class="skillCategory"></span></div>
+        </div>
+
+        <form action="" class="newSkillForm">
+            <div class="inputWrapper">
+                <label for="newSkill">Name of skill</label>
+                <input type="text" class="newSkill">
+            </div>
+            <div class="inputWrapper">
+                <label for="description">Description</label>
+                <textarea rows="3" class="description" placeholder="Say something about skill"></textarea>
+            </div>
+            <div class="inputWrapper">
+                <label for="price">Price</label>
+                <input type="number" class="price">
+            </div>
+            <div class="inputWrapper">
+                <label for="">Availability</label>
+                <div class="availWrapper">
+                    <button class="availBtn" data-availability="online">online</button>
+                    <button class="availBtn" data-availability="offline">offline</button>
+                    <button class="availBtn" data-availability="both">both</button>
+                </div>
+            </div>
+            <div class="skillMessage"></div>
+            <div class="uploadBtnWrapper">
+                <button class="uploadSkillBtn">share</button>
+            </div>
+        </form>
+    </div>
+    
+    <footer>
+        <div class="wrapper">
+            <a class="homeBtn" href="tutor-home.html">
+                <img src="./assets/images/home-icon.png" alt="">
+                <span>home</span>
+            </a>
+            <a class="categoryBtn" href="category.html">
+                <img src="./assets/images/categories-icon.png" alt="">
+                <span style="color: #457588;">category</span>
+            </a>
+            <a class="chatBtn" href="chat.html">
+                <img src="./assets/images/chat-icon.png" alt="">
+                <span>chat</span>
+            </a>
+            <a class="offersBtn" href="offers.html">
+                <img src="./assets/images/offers-icon.png" alt="">
+                <span>offers</span>
+            </a>
+            <a class="profileBtn" href="profile.html">
+                <img src="./assets/images/profile-icon.png" alt="">
+                <span>profile</span>
+            </a>
+        </div>
+    </footer>
+
+    <script type="module" src="src/js/new-skill.js"></script>
+</body>
+</html>

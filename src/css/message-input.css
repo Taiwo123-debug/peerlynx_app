@@ -1,0 +1,36 @@
+.chatContainer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    padding:4px 10px 8px 10px;
+    background-color: #1a282d;
+    box-sizing: border-box;
+}
+.chatContainer .chatInputWrapper input {
+    width: 87%;
+    float: left;
+    height: 45px;
+    border: 0px;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #1C3E4A;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #f3e8ff;
+}
+.chatContainer .chatInputWrapper button {
+    float: right;
+    border: 0px;
+    outline: none;
+    background-color: #1e7b9d;
+    padding: 10px 8px;
+    border-radius: 50%;
+    margin-top: 2px;
+}
+.chatContainer .chatInputWrapper button i {
+    font-size: 18px;
+    transform: rotate(35deg);
+    color: #111a1e;
+}

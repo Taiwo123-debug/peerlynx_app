@@ -1,0 +1,158 @@
+.container .banner {
+    width: 100%;
+    border-radius: 20px;
+    background-color: #a370f7;
+    height: 160px;
+    background-image: url(../../assets/images/tutor-banner-image.png);
+    background-position: right;
+    background-size: 45%;
+    background-repeat: no-repeat;
+    display: grid;
+    align-items: center; 
+    justify-items: start;
+    margin-top: 10px;
+}
+.container .statisticsContainer {
+    margin: 30px 0px;
+}
+.container .statisticsContainer .header {
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #f3e8ff;
+}
+.container .statisticsContainer .statisticsLinks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
+.container .statisticsContainer .statisticsLinks a {
+    flex: auto;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 0px;
+    outline: none;
+    background-color: rgba(200, 200, 200, 0.2);
+    display: grid;
+    place-content: center;
+    text-align: center;
+    height: 140px;
+    box-sizing: border-box;
+}
+.container .statisticsContainer .statisticsLinks a span {
+    color: #f3e8ff;
+    text-transform: capitalize;
+}
+.container .statisticsContainer .statisticsLinks a span.activeStudents, span.alumniCount {
+    font-size: 30px;
+    font-weight: 600;
+}
+.container .statisticsContainer .statisticsLinks a span.text {
+    font-size: 18px;
+    font-weight: 500;
+}
+.container .cuurentStudentHeader {
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 500;
+    color: #f3e8ff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.container .currentStudentsContainer {
+    contain: content;
+    display: grid;
+    row-gap: 10px;
+    padding-bottom: 100px;
+}
+.container .currentStudentsContainer .studentsLinkWrapper {
+    text-align: center;
+}
+
+.container .currentStudentsContainer .currentStudent {
+    border-radius: 6px;
+    border: 1px solid grey;
+    padding: 8px;
+    contain: content;
+}
+.container .currentStudentsContainer .currentStudent a {
+    text-decoration: none;
+}
+.container .currentStudentsContainer .studentDetails .skill {
+    font-size: 17px;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: capitalize;
+}
+.container .currentStudentsContainer .studentDetails .studentName {
+    font-weight: 600;
+    font-size: 15px;
+    color: rgb(200, 198, 198);
+    text-transform: capitalize;
+}
+.container .currentStudentsContainer .studentDetails button {
+    background-color: transparent;
+    border: 0px;
+    outline: none;
+    padding: 5px 0px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.container .currentStudentsContainer .studentDetails .stat.ongoing {
+    color: rgb(26, 187, 26);
+}
+.container .currentStudentsContainer .studentDetails .stat.finished {
+    color: orange;
+}
+.container .currentStudentsContainer .studentDetails button span.statText {
+   color:#f3e8ff;
+   margin-right: 5px;
+}
+.container .currentStudentsContainer a.trackProgress {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 8px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    padding: 5px 10px;
+    color: #f3e8ff;
+    border-radius: 6px;
+    text-transform: capitalize;
+    font-size: 15px;
+    background-color: rgba(200, 200, 200, 0.2);
+}
+.container .noStudent {
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+}
+.addSkill {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 100px;
+    width: 100%;
+    display: grid;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    /* background-color: #1a282d; */
+}
+.addSkill a {
+    text-align: center;
+    text-decoration: none;
+    background-color: #a370f7;
+    color: #f3e8ff;
+    padding: 10px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: capitalize;
+    transition: 1.2s;
+}
+.container .addSkill a span {
+    font-size: 30px;
+    font-weight: 500;
+    margin-right: 10px;
+}

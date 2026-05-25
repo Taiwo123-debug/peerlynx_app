@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "986070410878",
+    "project_id": "peerlynx-push-notifications",
+    "storage_bucket": "peerlynx-push-notifications.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986070410878:android:0656b7f64aec2050f25a2f",
+        "android_client_info": {
+          "package_name": "com.peerlynx.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARyPi6EodmYkgrp6c98mB-l7lL44l4x1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

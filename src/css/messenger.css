@@ -1,0 +1,132 @@
+html {
+    background-color: #1a282d;
+}
+body {
+    height: 100vh;
+    overflow: hidden;
+    list-style: none;
+    background-color: #1a282d;
+    margin: 0px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+nav {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 20px 10px 0px 10px;
+    background-color: #1a282d;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    contain: content;
+    border: 1px solid grey;
+    border-width: 0px 0px 1px 0px;
+}
+nav .back button {
+    padding: 0px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    float: left;
+    margin-top: 10px;
+}
+nav .back button i {
+    color: #f3e8ff;
+    font-size: 20px;
+}
+nav .profileContainer {
+    display: flex;
+    gap: 10px;
+}
+nav .profileContainer .imageContainer {
+    width: 45px;
+    position: relative;
+    margin-left: 20px;
+}
+nav .profileContainer .imageContainer img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #a370f7;
+}
+nav .profileContainer .namesContainer {
+    display: grid;
+    color: #f3e8ff;
+}
+nav .profileContainer .namesContainer span {
+    font-size: 14px;
+}
+nav .profileContainer .namesContainer span.recipientNameEl {
+    font-weight: 600;
+    margin-bottom: -10px;
+    margin-top: 4px;
+}
+.chatBoardContainer {
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 75px 10px 60px 10px;
+    position: relative;
+}
+.chatBoardContainer .chatBoard {
+    max-height: 100%;
+    min-height: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.chatBoardContainer .chatBoard .chatDateHeader {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 12px;
+    color: grey;
+    border: 1px solid grey;
+    padding: 7px 15px;
+    border-radius: 20px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.chatBoardContainer .chatBoard .sentMessagesWrapper, .recievedMessagesWrapper {
+    contain: content;
+    padding: 5px 5px 3px 5px;
+}
+.chatBoardContainer .chatBoard .sentMessagesWrapper .sentMessages {
+    width: fit-content;
+    float: right;
+    display: grid;
+    text-align: right;
+}
+.chatBoardContainer .chatBoard .sentMessagesWrapper .sentMessages .sent {
+    background-color: #1e7b9d;
+    padding: 8px 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 14px;
+}
+.chatBoardContainer .chatBoard .sentMessagesWrapper .sentMessages .sentTime {
+    color: grey;
+    font-size: 12px;
+    padding-right: 4px;
+}
+.chatBoardContainer .chatBoard .recievedMessagesWrapper .recievedMessages {
+    width: fit-content;
+    float: left;
+    display: grid;
+    text-align: left;
+}
+.chatBoardContainer .chatBoard .recievedMessagesWrapper .recievedMessages .recieved {
+    background-color: #3D616E;
+    padding: 8px 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 14px;
+}
+.chatBoardContainer .chatBoard .recievedMessagesWrapper .recievedMessages .recievedTime {
+    color: grey;
+    font-size: 12px;
+    padding-right: 4px;
+}

@@ -1,0 +1,63 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #1a282d;
+}
+nav {
+    padding: 20px 10px 20px 10px;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    display: grid;
+}
+nav .username {
+    text-transform: capitalize;
+}
+nav .userQuestion {
+    font-size: 18px;
+}
+.categoryContainer {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+    column-gap: 20px;
+}
+.categoryContainer div {
+    border-radius: 25px;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    height: 30vh;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: 1s;
+    cursor: pointer;
+}
+.categoryContainer .techSkill, .professsionalSkill {
+    background-color: #457588;
+}
+.categoryContainer .lifeSkill, .creativeSkill {
+    background-color: rgba(100, 100, 100, 0.5);
+}
+.categoryContainer div:hover {
+    background-color: #a370f7;
+}
+.categoryContainer div img {
+    width: 60px;
+}
+.categoryContainer div .skillName {
+    text-transform: capitalize;
+    font-family: "Mochiy Pop P One", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 7px 0px;
+}
+.categoryContainer div .skillText {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    color: #ffffff;
+}

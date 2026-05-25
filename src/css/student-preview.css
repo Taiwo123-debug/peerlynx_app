@@ -1,0 +1,191 @@
+html {
+    background-color: #1a282d;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #1a282d;
+    font-family: "Poppins", sans-serif;
+}
+nav {
+    padding: 20px 0px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+nav .windowHistory {
+    background-color: transparent;
+    outline: none;
+    border: 0px;
+    color: #ffffff;
+    font-size: 20px;
+}
+.container {
+    padding: 0px 10px 10px 60px 10px;
+}
+.container .profileHeader {
+    display: grid;
+    contain: content;
+}
+.container .profileHeader .imageContainer {
+    display: grid;
+    place-content: center;
+}
+.container .profileHeader .imageContainer figure {
+    width: 80px;
+    height: 80px;
+}
+.container .profileHeader .imageContainer figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    border-radius: 50%;
+    background-color: #a370f7;
+}
+.container .profileHeader .userInfo {
+    text-align: center;
+    display: grid;
+    row-gap: 5px;
+}
+.container .profileHeader .userInfo .recipientName {
+    color: #ffffff;
+    text-transform: capitalize;
+    font-size: 16px;
+}
+.container .profileHeader .userInfo .recipientSchool {
+    color: #c2c6cc;
+    font-size: 14px;
+}
+.container .profileContacts {
+    padding: 20px 50px;
+    display: grid;
+    place-content: center;
+}
+.container .profileContacts .contacts {
+    text-align: center;
+    word-spacing: 10px;
+    display: flex;
+    gap: 13px;
+}
+.container .profileContacts .contacts a {
+    text-decoration: none;
+    border: 1px solid grey;
+    padding: 8px;
+    border-radius: 7px;
+}
+.container .profileContacts .contacts a i {
+    color: #ffffff;
+    font-size: 23px;
+}
+.container .profileContacts .contacts a.recipientMobileEl {
+    display: none;
+}
+.container .profileContacts .contacts button {
+    background-color: transparent;
+    outline: none;
+    border: 1px solid grey;
+    padding: 8px;
+    border-radius: 7px;
+    position: relative;
+}
+.container .profileContacts .contacts button i {
+    color: #ffffff;
+    font-size: 23px;
+}
+.container .studentSkills {
+    padding: 10px 10px 20px 10px;
+}
+.container .studentSkills .header {
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+}
+.container .studentSkills .recommendationHeader {
+   text-align: center;
+   margin-top: 30px;
+   font-size: 18px;
+   color: #ffffff;
+}
+.container .studentSkills .skillHeader {
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 4px;
+}
+.container .studentSkills .recommendationHeader {
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 4px;
+}
+.container .studentSkills .skillsContainer, .recommendationContainer {
+    display: grid;
+    row-gap: 10px;
+}
+.container .studentSkills .skillsContainer .skillCard, .recommendationContainer .skillCard {
+    padding: 7px;
+    background-color: rgba(200, 200, 200, 0.2);
+    border-radius: 8px;
+    color: #1a282d;
+    cursor: pointer;
+    display: grid;
+    row-gap: 10px;
+}
+.container .studentSkills .skillsContainer .skillCard .skillName, .recommendationContainer .skillCard .skillName {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 600;
+}
+.container .studentSkills .skillsContainer .price, .recommendationContainer .price {
+    width: fit-content;
+    padding: 5px 7px;
+    background-color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    border: 0px;
+    border-radius: 5px;
+} 
+.container .studentSkills .skillsContainer .description {
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    border: 0px;
+    border-radius: 5px;
+} 
+.container .studentSkills .skillsContainer .registerBtn, .recommendationContainer .registerBtn {
+    margin-top: 10px;
+    padding: 15px 25px;
+    border: 0px;
+    border-radius: 7px;
+    font-size: 18px;
+    background-color: #a370f7;
+    color: #ffffff;
+    font-weight: 600;
+}
+.container .studentSkills .skillsContainer .trackProgressBtn {
+    margin-top: 10px;
+    padding: 15px 25px;
+    background-color: #a370f7;
+    border-radius: 7px;
+    font-size: 18px;
+    border: 0px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.container .moreInfo {
+    position: absolute;
+    bottom: 0;
+    padding: 7px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #1a282d;
+}
+.container .moreInfo span {
+    color: #ffffff;
+    font-size: 14px;
+}

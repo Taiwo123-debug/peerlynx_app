@@ -1,0 +1,101 @@
+html {
+    background-color: #1a282d;
+}
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Poppins", sans-serif;
+}
+.container {
+    padding: 10px 10px 60px 10px;
+}
+.container .header {
+    color: #f3e8ff;
+    padding: 10px 0px;
+    text-align: center;
+}
+.container .header a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    padding: 0px 10px;
+}
+.container .header .username {
+    text-transform: capitalize;
+    font-size: 16px;
+}
+.container .header .headerMessage {
+    font-size: 20px;
+}
+.container .searchResult {
+    margin-top: 30px;
+}
+.container .searchResult .noSkill {
+    height: 60vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+}
+.container .searchResult .noSkill p {
+    color: #f3e8ff;
+    font-size: 18px;
+    text-align: center;
+}
+.container .searchResult .noSkill a {
+    text-decoration: none;
+    color: #f3e8ff;
+    background-color: #a370f7;
+    padding: 15px 30px;
+    border-radius: 15px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.container .searchResult .skillsCount {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #f3e8ff;
+}
+.container .searchResult .skillsContainer {
+    display: grid;
+    row-gap: 13px;
+}
+.container .searchResult .skillsContainer .skillCard {
+    padding: 7px;
+    border: 1px solid grey;
+    border-radius: 8px;
+    color: #1a282d;
+    cursor: pointer;
+}
+.container .searchResult .skillsContainer .skillCard .skillName {
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #ffffff;
+}
+.container .searchResult .skillsContainer .skillCard .description {
+    font-size: 15px;
+    color: #f3e8ff;
+}
+.container .searchResult .skillsContainer .skillCard .wrapper {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+.container .searchResult .skillsContainer .skillCard .wrapper button {
+    border: 0px;
+    outline: none;
+    padding: 3px;
+    border-radius: 3px;
+}
+.container .searchResult .skillsContainer .skillCard .wrapper .rating i {
+    font-size: 10px;
+}
+.container .searchResult .skillsContainer .skillCard .wrapper .rating .star-inactive {
+    color: grey;
+}

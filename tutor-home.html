@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/home-navbar.css">
+    <link rel="stylesheet" href="src/css/tutor-home.css">
+    <link rel="stylesheet" href="src/css/footer.css">
+    <link rel="shortcut icon" href="assets/icons/peerlynx-icon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>PeerLynx</title>
+</head>
+<body>
+    
+    <div class="container">
+        <nav class="navbar">
+            <span class="p">p</span>
+            <div class="names">
+                <span class="appName">
+                    <span class="peer">PeerLynx</span>
+                </span>
+                <span class="welcome">Welcome, <span class="username"></span></span>
+            </div>
+            <button class="notifications">
+                <i class="fa-regular fa-bell"></i>
+                <span class="notificationCount">1</span>
+            </button>
+        </nav>
+
+        <div class="banner">
+            <div class="text">
+                <span>Ready to help other<br>Students learn?</span>
+                <a href="category.html">share your skills</a>
+            </div>
+        </div>
+
+        <div class="statisticsContainer">
+            <div class="header">statistics and quick actions</div>
+            <div class="statisticsLinks">
+                <a href="active-students.html">
+                    <span class="activeStudents"></span>
+                    <span class="text">active students</span>
+                </a>
+                <a href="alumni.html">
+                    <span class="alumniCount"></span>
+                    <span class="text">students taught</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="cuurentStudentHeader">current students</div>
+        <div class="noStudent"></div>
+        <div class="currentStudentsContainer"></div>
+    </div> 
+
+    <div class="addSkill">
+        <a href="category.html">+ &nbsp; add skill</a>
+    </div>
+
+    <footer>
+        <div class="wrapper">
+            <a class="homeBtn" href="tutor-home.html">
+                <img src="./assets/images/home-icon.png" alt="">
+                <span style="color: #457588;">home</span>
+            </a>
+             <a class="categoryBtn" href="category.html">
+                <img src="./assets/images/categories-icon.png" alt="">
+                <span>category</span>
+            </a>
+            <a class="chatBtn" href="chat.html">
+                <img src="./assets/images/chat-icon.png" alt="">
+                <span>chat</span>
+            </a>
+            <a class="offersBtn" href="offers.html">
+                <img src="./assets/images/offers-icon.png" alt="">
+                <span>offers</span>
+            </a>
+            <a class="profileBtn" href="profile.html">
+                <img src="./assets/images/profile-icon.png" alt="">
+                <span>profile</span>
+            </a>
+        </div>
+    </footer>
+
+    <script type="module" src="src/js/tutor-home.js"></script>
+</body>
+</html>

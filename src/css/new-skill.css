@@ -1,0 +1,136 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #1a282d;
+}
+.container {
+    padding: 15px 10px;
+}
+.container a.back {
+    text-decoration: none;
+}
+.container a.back i {
+    color: #f3e8ff;
+    font-size: 18px;
+} 
+.container .skillHeader {
+    display: grid;
+    place-items: center;
+}
+.container .skillHeader .p {
+    background-color: #a370f7;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.container .skillHeader .p span {
+    color: #f3e8ff;
+    font-size: 35px;
+    font-family: "Mochiy Pop P One", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    position: absolute;
+    margin-top: -12px;
+    margin-left: 14px;
+}
+.container .skillHeader .title {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #f3e8ff;
+    font-family: "Poppins", sans-serif;
+}
+.container .skillHeader .title span {
+    font-size: 21px;
+    color: #f3e8ff;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.container form {
+    margin-top: 10px;
+    padding: 15px 10px;
+    border: 2px solid grey;
+    border-radius: 20px;
+    display: grid;
+    row-gap: 12px;
+    font-family: "Poppins", sans-serif;
+}
+.container form label {
+    font-size: 14px;
+    color: #f3e8ff;
+    margin-bottom: 5px;
+}
+.container form .inputWrapper{
+    display: grid;
+}
+.container form .inputWrapper input {
+    height: 45px;
+    background-color: transparent;
+    border: 2px solid grey;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #f3e8ff;
+    outline: none;
+}
+.container form .inputWrapper input:focus {
+    border-color: #a370f7;
+}
+.container form .inputWrapper input::placeholder {
+    color: #f3e8ff;
+}
+.container form .inputWrapper textarea {
+    background-color: transparent;
+    border: 2px solid grey;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #f3e8ff;
+    outline: none;
+}
+.container form .inputWrapper textarea:focus {
+    border-color: #a370f7;
+}
+.container form .inputWrapper textarea::placeholder {
+    color: #f3e8ff;
+}
+.container form .availWrapper {
+    display: flex;
+    gap: 30px;
+}
+.container form .availWrapper .availBtn {
+    flex: auto;
+    border: 0px;
+    outline: none;
+    background-color: #f3e8ff;
+    color: #1a282d;
+    font-size: 17px;
+    text-transform: capitalize;
+    padding: 10px 0px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.container form .availWrapper .availBtn.selected {
+    background-color: #a370f7;
+    color: #f3e8ff;
+}
+.container form .skillMessage {
+    text-align: center;
+    color: #f3e8ff;
+    font-size: 14px;
+}
+.container form .uploadBtnWrapper {
+    margin-top: 25px;
+    text-align: right;
+}
+.container form .uploadBtnWrapper button {
+    border: 0px;
+    outline: none;
+    background-color: #a370f7;
+    color: #f3e8ff;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 15px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+}

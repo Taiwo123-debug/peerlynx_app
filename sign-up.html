@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/sign-up.css">
+    <link rel="shortcut icon" href="assets/icons/peerlynx-icon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>PeerLynx</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="headers">
+            <span class="logo">p</span>
+            <span class="texts">Create an acount to<br>connect with students<br>teaching the skills you need</span>
+        </div>
+        <form class="formContainer">
+            <input type="text" class="firstName" placeholder="First Name" maxlength="20">
+            <input type="text" class="lastName" placeholder="Last Name" maxlength="20">
+            <input type="email" class="email" placeholder="Email" maxlength="60">
+            <div class="passwordWrapper">
+                <input type="password" class="password" placeholder="Password" maxlength="20">
+                <button class="togglePasswordBtn">
+                    <img src="./assets/images/eye-close.png" alt="" class="eyeClose">
+                    <img src="./assets/images/eye-open.png" alt="" class="eyeOpen">
+                </button>
+            </div>
+            <div class="signMessage"></div>
+            <button class="signUpBtn" type="submit">Sign up</button>
+        </form>
+         <div class="more">
+            Already have an account? <a href="sign-in.html">Sign in</a>
+        </div>
+    </div>
+    
+    <script type="module" src="src/js/sign-up.js"></script>
+</body>
+</html>

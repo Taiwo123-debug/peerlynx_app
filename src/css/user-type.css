@@ -1,0 +1,107 @@
+body {
+    padding: 0px 30px;
+    box-sizing: border-box;
+    margin: 0px;
+    background-color: #1a282d;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+}
+.header {
+    padding-top: 5px;
+    display: flex;
+    font-size: 25px;
+    font-family: "Mochiy Pop P One", sans-serif;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #f3e8ff;
+}
+.choice {
+    display: grid;
+    row-gap: 20px;
+    align-items: start;
+    align-content: start;
+}
+.choice div {
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
+    height: 20vh;
+    border-radius: 15px;
+    flex: auto;
+    cursor: pointer;
+    border: 2px solid #a370f7;
+    transition: 1s;
+}
+.choice .studentBtn {
+    background-color: #a370f7;
+    color: #f3e8ff;
+    background-image: url(../../assets/images/student.png);
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+.choice .studentBtn.chosen {
+    background-color: #f3e8ff;
+    color: #a370f7;
+}
+.choice .tutorBtn {
+    background-color: #a370f7;
+    color: #f3e8ff;
+    background-image: url(../../assets/images/teacher.png);
+    background-size: 60%;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+.choice .tutorBtn.chosen {
+    background-color: #f3e8ff;
+    color: #a370f7;
+}
+.choice span {
+    font-size: 25px;
+    color: #f3e8ff;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+.userTypeMessage {
+    box-sizing: border-box;
+    text-align: center;
+    opacity: 0;
+}
+.userTypeMessage span {
+    font-size: 17px;
+    border-radius: 10px;
+    color: #f3e8ff;
+    font-family: "Poppins", sans-serif;
+}
+.continueWrapper button {
+    width: 100%;
+    padding: 15px 0px;
+    border-radius: 25px;
+    background-color: #f3e8ff;
+    text-transform: capitalize;
+    color: #1a282d;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    outline: none;
+    border: 0px;
+    font-weight: 600;
+    transition: 1.2s;
+}
+.continueWrapper button:hover {
+    background-color: #a370f7;
+    color: #f3e8ff;
+}
+
+@media (max-width: 800px) {
+    body {
+        padding: 20px;
+    }
+}

@@ -39,10 +39,15 @@
     <!-- chat input  -->
     <div class="chatContainer">
         <div class="chatInputWrapper">
-            <input type="text" class="inputEl" placeholder="Message">
+            <textarea class="inputEl" placeholder="Message" rows="1" oninput="this.style.height = '45px'; this.style.height = this.scrollHeight + 'px';"></textarea>
             <button class="sendMessageBtn"><i class="fa-solid fa-paper-plane"></i></button>
         </div>
     </div>
+
+    <!-- <div class="audioContainer">
+        <audio src="./assets/audios/incoming.mp3" class="incoming" controls></audio>
+        <audio src="./assets/audios/outgoing.mp3" class="outgoing" controls></audio>
+    </div> -->
 
     <script type="module" src="src/js/messenger.js"></script>
 </body>

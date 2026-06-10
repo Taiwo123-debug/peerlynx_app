@@ -49,7 +49,7 @@ a.back i {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-style: normal;
-    color: #F3E8FF;
+    color: #ffffff;
     line-height: 30px;
 }
 .container .more {
@@ -79,7 +79,7 @@ a.back i {
     padding: 5px;
     box-sizing: border-box;
     font-size: 17px;
-    color: #f3e8ff;
+    color: #ffffff;
 }
 .container .formContainer .firstName:focus, .lastName:focus, .email:focus{
     border-color: #A370F7;
@@ -102,7 +102,7 @@ a.back i {
     padding: 5px;
     box-sizing: border-box;
     font-size: 17px;
-    color: #f3e8ff;
+    color: #ffffff;
 }
 .container .formContainer .passwordWrapper input::placeholder {
     color: grey;
@@ -124,7 +124,7 @@ a.back i {
     text-align: center;
     box-sizing: border-box;
     font-size: 18px;
-    color: #f3e8ff;
+    color: #ffffff;
 }
 .container .formContainer .otpWrapper input:focus {
     border-color: #A370F7;
@@ -148,8 +148,8 @@ a.back i {
 }
 .container .formContainer .signMessage {
     text-align: center;
-    color: #f3e8ff;
-    font-size: 14px;
+    color: #ffffff;
+    font-size: 16px;
     font-family: "Poppins", sans-serif;
     font-style: normal;
 }
@@ -157,7 +157,7 @@ a.back i {
     margin-top: 15px;
     border-radius: 25px;
     background-color: #a370f7;
-    color: #f3e8ff;
+    color: #ffffff;
     font-size: 18px;
     font-family: "Poppins", sans-serif;
     cursor: pointer;
@@ -188,7 +188,7 @@ a.back i {
     display: grid;
 }
 .container .formContainer .googleSignContainer span {
-    color: #f3e8ff;
+    color: #ffffff;
     font-weight: 600;
     font-size: 18px;
     font-family: "Poppins", sans-serif;

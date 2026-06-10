@@ -5,20 +5,20 @@ import {
     addPendingSync,
     getPendingSync,
     removePendingSync,
-    updateLocalMessageId
+    updateLocalMessageId,
+    markAsRead
 } from "./sqlite-init.js";
 
 // SESSION
 const session = sessionStorage.getItem("loginTrue");
 const userEmail = sessionStorage.getItem("email");
 const userType = sessionStorage.getItem("userType");
+const notify = sessionStorage.getItem("notify");
 
 if (!session || !userEmail) {
     window.location.href = "login.html";
     throw new Error("No session found");
 }
-
-// read chat
 
 // RECIPIENT
 const params = new URLSearchParams(window.location.search);
@@ -35,6 +35,11 @@ recipientNameEl.textContent = recipientName;
 recipientUserTypeEl.textContent = userType === "tutor" ? "student" : "tutor";
 recipientImageEl.src = recipientImage || "./assets/images/no-image.png";
 
+// CHAT ID FORMATION
+const conversationId = [userEmail, recipientEmail].filter(Boolean).sort().join("_");
+
+sessionStorage.setItem("openChat", conversationId);
+
 // DOM
 const profileContainer = document.querySelector(".profileContainer");
 const windowHistory = document.querySelector(".windowHistory");
@@ -45,9 +50,11 @@ const inputEl = document.querySelector(".inputEl");
 // SQLITE INIT
 window.addEventListener("DOMContentLoaded", async () => {
     await initSQLiteDB();
+    await markAsRead(conversationId);
     if (chatBoard) {
         chatBoard.scrollTop = chatBoard.scrollHeight;
     }
+    window.dispatchEvent(new Event("chat-read"));
 });
 
 // OPEN PROFILE
@@ -61,7 +68,7 @@ profileContainer.addEventListener("click", () => {
 });
 
 windowHistory.addEventListener("click", () => {
-    window.history.back();
+    window.location.href = "chat.html";
 });
 
 // SOCKET
@@ -75,28 +82,43 @@ socket.on("connect", async () => {
     await loadChat();
 });
 
-// CHAT
-const conversationId = [userEmail, recipientEmail].filter(Boolean).sort().join("_");
-
 let lastRenderedDate = null;
-// Track temporary IDs
 const pendingTempIds = new Map();
 
 inputEl.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
-        sendMessageBtn.click();
+        if (!e.shiftKey) {
+            e.preventDefault(); 
+            sendMessageBtn.click();
+        }
     }
 });
 
 sendMessageBtn.addEventListener("click", () => {
     const text = inputEl.value.trim();
     if (!text) return;
+
+    inputEl.value = "";
+    inputEl.style.height = "45px";
+
     sendMessage(text);
 });
 
+// notification sound
+function notificationSound(type) {
+    const isNotifyEnabled = notify === true || notify === "true" || notify === 1 || notify === "1";
+
+    if (!isNotifyEnabled) return;
+
+    const audio = new Audio(`./assets/audios/${type}.mp3`);
+
+    audio.play().catch(err => {
+        console.error("Audio play failed:", err);
+    });
+}
+
 // SEND MESSAGE
 async function sendMessage(text) {
-    inputEl.value = "";
     const tempId = `temp_${Date.now()}`;
     const createdAt = new Date().toISOString();
 
@@ -106,16 +128,19 @@ async function sendMessage(text) {
         sender_id: userEmail,
         receiver_id: recipientEmail,
         message: text,
-        created_at: createdAt
+        created_at: createdAt,
+        is_read: 1
     };
 
-    // track temporary outgoing
     pendingTempIds.set(tempId, {
         text,
         created_at: createdAt
     });
 
-    appendMessage(msg);
+    appendMessage(msg); 
+
+    notificationSound("outgoing");
+
     await saveLocalMessage(msg);
 
     try {
@@ -133,18 +158,12 @@ async function sendMessage(text) {
 
         if (result.success && result.message?.id) {
             const serverId = result.message.id;
-
-            // update local sqlite
             await updateLocalMessageId(tempId, serverId);
 
-            // update DOM
             const bubble = document.querySelector(`[data-msg-id="${tempId}"]`);
-
             if (bubble) {
                 bubble.setAttribute("data-msg-id", serverId);
             }
-
-            // remove tracking
             pendingTempIds.delete(tempId);
         }
     }
@@ -160,29 +179,21 @@ socket.on("new_message", async (msg) => {
         return;
     }
 
-    // already exists
     const exists = document.querySelector(`[data-msg-id="${msg.id}"]`);
-
     if (exists) {
         return;
     }
 
-    // detect same outgoing message
     if (msg.sender_id === userEmail) {
         const pendingEntries = [...pendingTempIds.entries()];
-        for (const [tempId, tempData] of pendingEntries) {
-            const sameText = tempData.text === msg.message;
-            if (sameText) {
-                // update DOM temp bubble
-                const tempBubble = document.querySelector(`[data-msg-id="${tempId}"]`);
 
+        for (const [tempId, tempData] of pendingEntries) {
+            if (tempData.text === msg.message) {
+                const tempBubble = document.querySelector(`[data-msg-id="${tempId}"]`);
                 if (tempBubble) {
                     tempBubble.setAttribute("data-msg-id", msg.id);
                 }
-
-                // update sqlite
                 await updateLocalMessageId(tempId, msg.id);
-
                 pendingTempIds.delete(tempId);
                 return;
             }
@@ -190,24 +201,35 @@ socket.on("new_message", async (msg) => {
     }
 
     appendMessage(msg);
+
+    notificationSound("incoming");
+
     await saveLocalMessage({
         ...msg,
         sync_status: "synced"
     });
+    
+    await markAsRead(conversationId);
 });
 
 // LOAD CHAT
 async function loadChat() {
+    if (chatBoard) {
+        chatBoard.innerHTML = "";
+    }
+    lastRenderedDate = null;
+
     const localMessages = await getMessages(conversationId);
     renderMessages(localMessages);
+    
     await syncWithServer(localMessages);
+    await markAsRead(conversationId);
 }
 
-// SYNC SERVER
+// sync with server
 async function syncWithServer(localMessages) {
     try {
         const response = await fetch(`https://peerlynx-server.onrender.com/chat/${conversationId}`);
-
         const serverMessages = await response.json();
 
         if (!Array.isArray(serverMessages)) {
@@ -215,11 +237,30 @@ async function syncWithServer(localMessages) {
         }
 
         const localIds = new Set(localMessages.map(m => m.id));
-
-        const sorted =serverMessages.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+        const sorted = serverMessages.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
 
         for (const msg of sorted) {
-            if (!localIds.has(msg.id)) {
+            if (localIds.has(msg.id)) continue;
+            if (document.querySelector(`[data-msg-id="${msg.id}"]`)) continue;
+
+            let isTempDuplicate = false;
+            if (msg.sender_id === userEmail) {
+                const pendingEntries = [...pendingTempIds.entries()];
+                for (const [tempId, tempData] of pendingEntries) {
+                    if (tempData.text === msg.message) {
+                        const tempBubble = document.querySelector(`[data-msg-id="${tempId}"]`);
+                        if (tempBubble) {
+                            tempBubble.setAttribute("data-msg-id", msg.id);
+                        }
+                        await updateLocalMessageId(tempId, msg.id);
+                        pendingTempIds.delete(tempId);
+                        isTempDuplicate = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!isTempDuplicate) {
                 appendMessage(msg);
                 await saveLocalMessage({
                     ...msg,
@@ -229,13 +270,12 @@ async function syncWithServer(localMessages) {
         }
     }
     catch (err) {
-        console.log("offline mode");
+        console.log("offline mode or sync failed", err);
     }
 }
 
 // APPEND MESSAGE
 function appendMessage(msg) {
-    // hard duplicate protection
     if (document.querySelector(`[data-msg-id="${msg.id}"]`)) {
         return;
     }
@@ -302,7 +342,6 @@ async function syncPendingMessages() {
                     body: item.payload
                 }
             );
-
             await removePendingSync(item.id);
         }
         catch (err) {
@@ -321,11 +360,9 @@ function formatChatDate(dateString) {
     if (date.toDateString() === today.toDateString()) {
         return "Today";
     }
-
     if (date.toDateString() === yesterday.toDateString()) {
         return "Yesterday";
     }
-
     return date.toLocaleDateString(undefined, {
         year: "numeric",
         month: "long",

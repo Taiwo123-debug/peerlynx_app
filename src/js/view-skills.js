@@ -130,10 +130,7 @@ function loadDom(skill){
     skillCard.append(skillName, description, wrapper, tutorName);
     skillsContainer.appendChild(skillCard);
 
-    const loadedSkills = document.querySelectorAll(".skillCard");
-    loadedSkills.forEach((item, index)=>{
-        item.addEventListener("click", ()=>{
-            window.location.href = `skill-preview.html?email=${encodeURIComponent(skill.tutor_email)}&skill=${encodeURIComponent(skill.skill_name)}`;
-        })
-    })
+    skillCard.addEventListener("click", () => {
+        window.location.href = `skill-preview.html?email=${encodeURIComponent(skill.tutor_email)}&skill=${encodeURIComponent(skill.skill_name)}`;
+    });
 }

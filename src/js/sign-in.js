@@ -7,6 +7,10 @@ const eyeOpen = document.querySelector(".eyeOpen");
 const signMessage = document.querySelector(".signMessage");
 const signInBtn = document.querySelector(".signInBtn");
 
+// IMPORTANT: reset per-user local data
+localStorage.removeItem("unreadMap");
+localStorage.removeItem("openChat");
+
 // Input Filtering & UI
 email.addEventListener("input", () => {
     email.value = email.value.replace(/[^a-zA-Z0-9@._+-]/g, "");

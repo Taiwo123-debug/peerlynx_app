@@ -7,18 +7,25 @@
     background-color: #1a282d;
     box-sizing: border-box;
 }
-.chatContainer .chatInputWrapper input {
+.chatContainer .chatInputWrapper textarea {
     width: 87%;
     float: left;
-    height: 45px;
+    height: 45px;          /* Starting height */
+    max-height: 150px;     /* Optional: Stops it from growing infinitely high */
     border: 0px;
     outline: none;
-    padding: 10px;
+    padding: 8px;
     box-sizing: border-box;
     background-color: #1C3E4A;
     border-radius: 10px;
     font-size: 16px;
     color: #f3e8ff;
+    
+    /* Crucial rules for wrapping and growing */
+    resize: none;          /* Prevents the user from manually resizing the box */
+    overflow-y: auto;      /* Adds a scrollbar only if it hits the max-height */
+    word-break: break-word;/* Breaks long continuous words */
+    font-family: inherit;
 }
 .chatContainer .chatInputWrapper button {
     float: right;

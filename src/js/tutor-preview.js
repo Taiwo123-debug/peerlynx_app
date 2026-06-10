@@ -14,6 +14,7 @@ const recipientEmail = decodeURIComponent(params.get("recipient-email"));
 const recipientName = decodeURIComponent(params.get("recipient-name"));
 const recipientImage = decodeURIComponent(params.get("recipient-image"));
 
+
 const windowHistory = document.querySelector(".windowHistory");
 const backToChat = document.querySelector(".backToChat");
 
@@ -22,7 +23,7 @@ windowHistory.addEventListener("click", ()=>{
 })
 
 backToChat.addEventListener("click", ()=>{
-    let url = `messenger.html?recipient-email=${encodeURIComponent(params.get("recipient-image"))}&recipient-name=${encodeURIComponent(recipientName)}&recipient-image=${encodeURIComponent(recipientImage)}`;
+      const url = `messenger.html?recipient-email=${encodeURIComponent(recipientEmail)}&recipient-name=${encodeURIComponent(recipientName)}&recipient-image=${encodeURIComponent(recipientImage)}`;
     window.location.href = url;
 })
 
@@ -50,7 +51,6 @@ const url = `https://peerlynx-server.onrender.com/tutor-skills?email=${encodeURI
         const skillsContainer = document.querySelector(".skillsContainer");
         skillsContainer.innerHTML = "";
         if (!data.success) {
-            alert(0)
             return;
         }
 

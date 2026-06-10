@@ -141,11 +141,14 @@ async function getBadge() {
             return;
         }
 
+        if(!data.badge) {
+                badgeText.textContent = "Good job student. No badge for this course.";
+        }
+
         if (data.badge) {
             badgeText.textContent = "Good job student. Here's your badge";
             badgeImage.src = "./assets/images/badge-removebg.png";
         }
-        
     }
     catch (error) {
         alert(error);

@@ -1,3 +1,5 @@
+import { Share } from '@capacitor/share';
+
 const session = sessionStorage.getItem("loginTrue");
 const email = sessionStorage.getItem("email");
 const userType = sessionStorage.getItem("userType");
@@ -11,7 +13,6 @@ const signOutAsk = document.querySelector(".signOutAsk");
 const signOutQuestion = document.querySelector(".signOutQuestion");
 const yesSignOut = document.querySelector(".yesSignOut");
 const noSignOut = document.querySelector(".noSignOut");
-const toggleNotification = document.querySelector(".toggleNotification");
 const userTypeEl = document.querySelector(".userType");
 const profilePicture = document.querySelector(".profilePicture");
 const fullName = document.querySelector(".fullName");
@@ -19,6 +20,9 @@ const emailEl = document.querySelector(".email");
 const homeBtn = document.querySelector(".homeBtn");
 const viewTutorSkills = document.querySelector(".viewTutorSkills");
 const trackStudentProgress = document.querySelector(".trackStudentProgress");
+const toggle = document.getElementById("toggle");
+const toggleText = document.querySelector(".toggleText");
+const shareApp = document.querySelector(".shareApp");
 
 userTypeEl.textContent = userType;
 emailEl.textContent = email;
@@ -67,7 +71,10 @@ async function getUserData() {
        
         fullName.textContent = `${user.first_name} ${user.last_name}`.trim();
         homeBtn.href = `${user.user_type}-home.html`;
+        const notify = user.notify === 1;
         sessionStorage.setItem("userType", user.user_type);
+        noficationFunction(notify);
+        sessionStorage.setItem("notify", notify);
     }
     catch (err) {
         console.error("Failed to load user:", err);
@@ -118,15 +125,68 @@ yesSignOut.addEventListener("click", async () => {
     }, 1000)
 });
 
-// toggle notification
-let notifyMe = "inactive";
-toggleNotification.addEventListener("click", ()=>{
-    if (notifyMe == "inactive") {
-        notifyMe = "active";
-        toggleNotification.textContent = "on";
+function noficationFunction(status) {
+    if (status) {
+        toggle.classList.remove("off");
+        toggle.classList.add("on");
+        toggleText.textContent = "ON";
+        toggle.style.textAlign = "left";
     }
     else {
-        notifyMe = "inactive";
-        toggleNotification.textContent = "off";
+        toggle.classList.remove("on");
+        toggle.classList.add("off");
+        toggleText.textContent = "OFF";
+        toggle.style.textAlign = "right";
     }
-})
+}
+
+// toggle notification
+toggle.addEventListener("click", () => {
+    let text = toggleText.textContent.toLocaleLowerCase();
+    if (text == "on") {
+        updateNotification(false);
+    }
+    else {
+        updateNotification(true);
+    }
+});
+
+// update notification in server
+async function updateNotification(status) {
+    const url = "https://peerlynx-server.onrender.com/update-notification";
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email: email,
+                notify: status
+            })
+        });
+        const data = await response.json();
+        
+        if (data.success) {
+            noficationFunction(status);
+            sessionStorage.setItem("notify", status);
+        }
+    }
+    catch (err) {
+        console.error("Error saving userType:", err);
+    }
+}
+
+// copy link
+shareApp.addEventListener("click", async () => {
+    try {
+        await Share.share({
+            title: 'PeerLynx - Connect and Learn',
+            text: 'Check out this app',
+            url: shareApp.getAttribute("data-link"),
+            dialogTitle: 'Share with'
+        });
+    }
+    catch (err) {}
+});

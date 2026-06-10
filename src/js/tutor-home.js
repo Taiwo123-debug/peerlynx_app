@@ -5,6 +5,7 @@ const activeStudents = document.querySelector(".activeStudents");
 const alumniCount = document.querySelector(".alumniCount");
 const currentStudentsContainer = document.querySelector(".currentStudentsContainer");
 const noStudent = document.querySelector(".noStudent");
+const loadingContainer = document.querySelector(".loadingContainer");
 
 if (!session || !email) {
     window.location.href = "login.html";
@@ -12,6 +13,7 @@ if (!session || !email) {
 }
 
 async function getUserData() {
+    loadingContainer.style.display = "flex";
     const url = `https://peerlynx-server.onrender.com/user-data?email=${encodeURIComponent(email)}`;
     // const url = `http://10.0.2.2:3000/user-data?email=${encodeURIComponent(email)}`;
     try {
@@ -35,6 +37,7 @@ async function getUserData() {
         alumniCount.textContent = Array.isArray(user.students_taught) ? user.students_taught.length : 0;
         sessionStorage.setItem("username", fullName);
         sessionStorage.setItem("userType", "tutor");
+        sessionStorage.setItem("notify", user.notify);
     }
     catch (err) {
         console.error("Failed to load user:", err);
@@ -107,6 +110,7 @@ async function getTutorStudents() {
                     </button>
                 </div>
             `;
+            loadingContainer.style.display = "none";
             studentCard.appendChild(studentLink);
             currentStudentsContainer.appendChild(studentCard);
         });

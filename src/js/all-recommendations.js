@@ -47,8 +47,11 @@ function renderSkills(skills) {
         const card = document.createElement("div");
         card.className = "recommendations";
         card.innerHTML = `
-            <div class="imageWrapper">
-                <img src="${skill.profile_picture ? `https://peerlynx-server.onrender.com${skill.profile_picture}` : "./assets/images/no-image.png"}" />
+           <div class="imageWrapper">
+                <img 
+                    src="${skill.profile_picture ? `https://peerlynx-server.onrender.com${skill.profile_picture}` : './assets/images/no-image.png'}"
+                    onerror="this.onerror=null;this.src='./assets/images/no-image.png';"
+                />
             </div>
 
             <div class="skillsWrapper">

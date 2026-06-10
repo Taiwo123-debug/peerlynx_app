@@ -8,7 +8,7 @@ nav {
     padding: 10px;
     border-width: 0px 0px 1px 0px;
     border-style: solid;
-    border-color: #f3e8ff;
+    border-color: #ffffff;
 }
 nav div.signOutContainer {
     contain: content;
@@ -32,7 +32,7 @@ nav div .signOutQuestion {
 }
 nav div .signOutQuestion span {
     font-size: 16px;
-    color: #f3e8ff;
+    color: #ffffff;
     margin-right: 15px;
 }
 nav div .signOutQuestion button {
@@ -41,7 +41,7 @@ nav div .signOutQuestion button {
     outline: none;
     border: 2px solid #f3e8ff;
     border-radius: 3px;
-    color: #f3e8ff;
+    color: #ffffff;
     font-size: 16px;
     padding: 3px 7px;
 }
@@ -100,7 +100,7 @@ nav .userType {
 .container .profileHeader .userInfo {
     display: grid;
     text-align: center;
-    color: #f3e8ff;
+    color: #ffffff;
 }
 .container .profileHeader .userInfo span {
     font-weight: 500;
@@ -117,7 +117,7 @@ nav .userType {
 }
 .container .settingsContainer .top, .bottom {
     display: grid;
-    row-gap: 18px;
+    row-gap: 22px;
 }
 .container .settingsContainer .top a.viewTutorSkills {
     display: none;
@@ -136,6 +136,15 @@ nav .userType {
     text-transform: capitalize;
     font-weight: 500;
 }
+.container .settingsContainer .bottom div {
+     color: #ffffff;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.container .settingsContainer .bottom div i {
+    float: right;
+}
 .container .settingsContainer .top a i, .bottom a i {
     float: right;
 }
@@ -153,4 +162,39 @@ nav .userType {
     text-transform: uppercase;
     padding: 4px 10px;
     border-radius: 10px;
+}
+
+/* notification toggle */
+.toggle{
+    width: 75px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    text-align: left;
+}
+.toggle .toggleText {
+    color: #1a282d;
+    text-transform: uppercase;
+}
+.circle{
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #a370f7;
+    position: absolute;
+    top: 1px;
+    transition: 0.35s cubic-bezier(.68,-0.55,.27,1.55);
+    box-shadow: 2px 2px 2px #1a282d;
+}
+.toggle.on .circle{
+    right: 4px;
+}
+.toggle.off .circle{
+    left: 4px;
 }

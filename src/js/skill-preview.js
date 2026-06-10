@@ -24,9 +24,18 @@ const back = document.querySelector(".back");
 
 const chatBtn = document.querySelector(".chatBtn");
 
+const container = document.querySelector(".container");
+const loadingContainer = document.querySelector(".loadingContainer");
+
 back.addEventListener("click", ()=>{
     window.history.back();
 })
+
+window.addEventListener("DOMContentLoaded", async () => {
+    loadingContainer.style.display = "flex";
+    await getSkillPreview();
+    await getOgoingAlumniCount();
+});
 
 // get tutor and skill profile
 async function getSkillPreview() {
@@ -82,17 +91,14 @@ async function getOgoingAlumniCount() {
 
         alumni.textContent = data.ongoing || 0;
         ongoing.textContent = data.finished || 0;
+        container.style.display = "block";
+        loadingContainer.style.display = "none";
     }
     catch (err) {
+        loadingContainer.style.display = "none";
         console.error("Failed to load count:", err);
     }
 }
-
-(async()=>{
-    await getSkillPreview();
-    await getOgoingAlumniCount();
-
-})();
 
 // go to messenger
 chatBtn.addEventListener("click", ()=>{

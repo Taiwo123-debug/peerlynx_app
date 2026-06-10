@@ -32,6 +32,8 @@ const recipientSchool = document.querySelector(".recipientSchool");
 const recipientEmailEl = document.querySelector(".recipientEmailEl");
 const recipientMobileEl = document.querySelector(".recipientMobileEl");
 
+const loadingContainer = document.querySelector(".loadingContainer");
+
 recipientNameEl.textContent = `${recipientName} (Student)`;
 recipientPictureEl.src = recipientImage || "./assets/images/no-image.png";
 recipientEmailEl.href = `mailto:${recipientEmail}`;
@@ -99,7 +101,6 @@ const url = `https://peerlynx-server.onrender.com/registered-student-skills?stud
 
 // helper function when student hasnt registered to a skill yet
 async function getTutorSkills() {
-
     const url = `https://peerlynx-server.onrender.com/tutor-skills?email=${encodeURIComponent(userEmail)}`;
     // const url = `http://10.0.2.2:3000/tutor-skills?email=${encodeURIComponent(userEmail)}`;
 
@@ -142,14 +143,9 @@ async function getTutorSkills() {
     }
 }
 
-let registerClicked = false;
 // register student to course
 async function registerStudent(category, tutorName, tutorEmail, studentName, studentEmail, skillId, skillName, skillDescr, skillPrice, skillRating) {
-    if (registerClicked) {
-        return;
-    }
-
-    registerClicked = true;
+    loadingContainer.style.display = "flex";
     let status = "ongoing";
     let badge = null;
 
@@ -162,7 +158,7 @@ async function registerStudent(category, tutorName, tutorEmail, studentName, stu
         tutor_email: tutorEmail,
         student_name: studentName,
         student_email: studentEmail,
-        skill_id: skillId,
+        skill_id: null,
         skill_name: skillName,
         description: skillDescr,
         price: skillPrice,
@@ -184,16 +180,18 @@ async function registerStudent(category, tutorName, tutorEmail, studentName, stu
         const data = await response.json();
 
         if (!data.success) {
-            registerClicked = false;
-            alert(data.message);
+            alert("data failed");
+            window.location.reload();
             return;
         }
-        // await getRegisteredSkills(data, userEmail, recipientEmail);
-        window.location.reload();
+     
+        setTimeout(()=>{
+            window.location.reload();
+        }, 1000);
     }
     catch (error) {
-        registerClicked = false;
         alert(error);
+        window.location.reload();
     }
 }
 
@@ -246,7 +244,7 @@ async function recommendTutorSkills(registeredSkills) {
         }
 
         recommendationContainer.innerHTML = "";
-        recommendationHeader.textContent = "Unregistered skills";
+       
         data.skills.forEach((skill) =>{
             // compare registered skills
             const alreadyRegistered =
@@ -288,6 +286,10 @@ async function recommendTutorSkills(registeredSkills) {
                 await registerStudent(skill.category, skill.tutor_name, skill.tutor_email, recipientName, recipientEmail, skill.skill_id, skill.skill_name, skill.description, skill.price, skill.rating);
             })
         })
+
+        if (recommendationContainer.innerHTML !== "") {
+            recommendationHeader.textContent = "Unregistered skills";
+        }
     }
     catch (error) {
         alert(error);

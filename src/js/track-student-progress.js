@@ -17,7 +17,7 @@ const skillStatus = sessionStorage.getItem("skillStatus");
 
 if (!recipientEmail || !skillName) {
     alert("Missing session parameters");
-    window.history.back();
+     window.location.href = `track-student-progress.html?recipient-email=${encodeURIComponent(recipientEmail)}&recipient-name=${encodeURIComponent(recipientName)}&skill-name=${encodeURIComponent(skillName)}`;
 }
 
 // DOM
@@ -307,7 +307,9 @@ else {
     sessionContainer.style.display = "none";
     createSessionBtn.style.display = "none";
 }
+
 changeStatusBtn.addEventListener("click", ()=>{
+    if ( changeStatusBtn.textContent == "This course is completed") return;
     if (skillStatus == "finished") {
         courseCompleted.style.display = "grid";
     }
@@ -379,8 +381,8 @@ async function updateCourseStatus(status) {
         }
 
         sessionStorage.setItem("skillStatus", status);
-        changeStatusBtn.textContent = "This course is completed";
-        courseCompleted.style.display = "flex";
+
+        window.location.reload();
     }
     catch (error) {
         alert(error);

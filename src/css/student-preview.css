@@ -189,3 +189,27 @@ nav .windowHistory {
     color: #ffffff;
     font-size: 14px;
 }
+.loadingContainer {
+    position: absolute;
+    height: 100Vh;
+    width: 100%;
+    background-color: #1a282d;
+    z-index: 2;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.loadingContainer .spinner {
+    width: 50px;
+    height: 43px;
+    border: 4px solid #a370f7;
+    border-top: 4px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

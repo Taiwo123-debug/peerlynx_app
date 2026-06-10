@@ -93,17 +93,21 @@ nav .profileContainer .namesContainer span.recipientNameEl {
 .chatBoardContainer .chatBoard .sentMessagesWrapper, .recievedMessagesWrapper {
     contain: content;
     padding: 5px 5px 3px 5px;
+    clear: both;
 }
 .chatBoardContainer .chatBoard .sentMessagesWrapper .sentMessages {
     width: fit-content;
+    max-width: 80%;
+    word-break: break-word;
+    overflow-wrap: break-word;
     float: right;
     display: grid;
-    text-align: right;
+    text-align: left;
 }
 .chatBoardContainer .chatBoard .sentMessagesWrapper .sentMessages .sent {
     background-color: #1e7b9d;
     padding: 8px 10px;
-    border-radius: 10px;
+    border-radius: 10px 0px 10px 10px;
     color: #ffffff;
     font-size: 14px;
 }
@@ -114,6 +118,9 @@ nav .profileContainer .namesContainer span.recipientNameEl {
 }
 .chatBoardContainer .chatBoard .recievedMessagesWrapper .recievedMessages {
     width: fit-content;
+    max-width: 80%;
+    word-break: break-word;
+    overflow-wrap: break-word;
     float: left;
     display: grid;
     text-align: left;
@@ -121,7 +128,7 @@ nav .profileContainer .namesContainer span.recipientNameEl {
 .chatBoardContainer .chatBoard .recievedMessagesWrapper .recievedMessages .recieved {
     background-color: #3D616E;
     padding: 8px 10px;
-    border-radius: 10px;
+    border-radius: 0px 10px 10px 10px;
     color: #ffffff;
     font-size: 14px;
 }

@@ -4,6 +4,7 @@ const userType = sessionStorage.getItem("userType");
 const findTutorBtn = document.querySelector(".findTutorBtn");
 const topicInput = document.querySelector(".topicInput");
 const recommendationsWrapper = document.querySelector(".recommendationsWrapper");
+const loadingContainer = document.querySelector(".loadingContainer");
 
 
 if (!session || !email) {
@@ -31,6 +32,7 @@ async function getUserData() {
         username.textContent = fullName || "No name";
         sessionStorage.setItem("username", fullName);
         sessionStorage.setItem("user-type", "student");
+        sessionStorage.setItem("notify", user.notify);
     }
     catch (err) {
         console.error("Failed to load user:", err);
@@ -54,8 +56,44 @@ findTutorBtn.addEventListener("click", (e)=>{
     }
 })
 
-async function topSkillsRoutine() {
-    const queryLimit = 4;
+// get student skill data for recommendation
+async function getStudentSkill() {
+    const url = `https://peerlynx-server.onrender.com/student-skills-selected?email=${encodeURIComponent(email)}`;
+    // const url = `http://10.0.2.2:3000/student-skills-selected?email=${encodeURIComponent(email)}`;
+    let studentSkills = [];
+
+    try {
+        const response = await fetch(url, {
+            method: "GET"
+        });
+        const data = await response.json();
+
+        if (!data.success) {
+            // call routine 1
+            await topSkillsRoutine(studentSkills);
+            return;
+        }
+
+        const skills = data.skills;
+
+        skills.forEach((skill) => {
+            studentSkills.push({
+                skill_name: skill.skill_name,
+                tutor_email: skill.tutor_email
+            });
+        })
+
+        // call routine 2
+        await topSkillsRoutine(studentSkills);
+    }
+    catch (err) {
+        console.error("Failed to load user:", err);
+    }
+}
+
+// get top skills and compare with student skills
+async function topSkillsRoutine(studentSkills) {
+    const queryLimit = 5;
     const url = `https://peerlynx-server.onrender.com/top-tutor-skills?limit=${queryLimit}`;
     // const url = `http://10.0.2.2:3000/top-tutor-skills?limit=${queryLimit}`;
     try {
@@ -69,76 +107,66 @@ async function topSkillsRoutine() {
             return;
         }
 
-        let aiRecommendation = data.skills;
-        await renderSkills(data.skills);
+        let tutorSkills = data.skills;
+        await renderSkills(studentSkills, tutorSkills);
     }
     catch (err) {
         console.error("Failed to ai recommendations one:", err);
     }
 }
 
-// get student skill data for recommendation
-// data 
-let studentSkills = []; 
-async function getStudentSkill() {
-    const url = `https://peerlynx-server.onrender.com/student-skills-selected?email=${encodeURIComponent(email)}`;
-    // const url = `http://10.0.2.2:3000/student-skills-selected?email=${encodeURIComponent(email)}`;
-
-    try {
-        const response = await fetch(url, {
-            method: "GET"
-        });
-        const data = await response.json();
-
-        if (!data.success) {
-            // call routine 1
-            await topSkillsRoutine();
-            return;
-        }
-
-        const user = data.data;
-        studentSkills = data.data;
-        // call routine 2
-        await topSkillsRoutine();
-    }
-    catch (err) {
-        console.error("Failed to load user:", err);
-    }
-}
-
 // show all recommended skill
-function renderSkills(skills) {
+function renderSkills(studentSkills, tutorSkills) {
     const wrapper = document.querySelector(".recommendationsWrapper");
     wrapper.innerHTML = "";
-    skills.forEach((skill) => {
+
+    // 1. Extract clean, individual keywords from all the student's existing skills
+    // e.g., "React Development" becomes ["react", "development"]
+    const studentKeywords = studentSkills.flatMap(sk => 
+        sk.skill_name.toLowerCase().replace(/[^a-zA-Z0-9\s]/g, '').split(/\s+/))
+        .filter(word => word.length > 2);
+
+    let renderedCount = 0;
+
+    tutorSkills.forEach((tutorSkill) => {
+        const isAlreadySelected = studentSkills.some(studentSkill => 
+            studentSkill.skill_name === tutorSkill.skill_name && 
+            studentSkill.tutor_email === tutorSkill.tutor_email
+        );
+
+        // If a match is found, skip rendering this specific tutor's skill card
+        if (isAlreadySelected) {
+            return; 
+        }
+
         let price;
-        if (skill.price == 0) {
+        if (tutorSkill.price == 0) {
             price = "Free";
         }
         else {
-            price = `${skill.price}`;
+            price = `${tutorSkill.price}`;
         }
         const card = document.createElement("div");
         card.className = "recommendations";
         card.innerHTML = `
             <div class="imageWrapper">
-                <img src="https://peerlynx-server.onrender.com${skill.profile_picture}" onerror="src='./assets/images/no-image.png'"/>
+                <img src="https://peerlynx-server.onrender.com${tutorSkill.profile_picture}" onerror="src='./assets/images/no-image.png'"/>
             </div>
 
             <div class="skillsWrapper">
-                <span class="skill">${skill.skill_name || "Unknown Skill"}</span>
-                <span class="tutorName">${skill.tutor_name || "Unknown Tutor"}</span>
+                <span class="skill">${tutorSkill.skill_name || "Unknown Skill"}</span>
+                <span class="tutorName">${tutorSkill.tutor_name || "Unknown Tutor"}</span>
                 <span class="price">₦${price}</span>
             </div>
 
             <div class="durationAndStars">
                 <div class="top">
                     <span class="availability">
-                        ${skill.availability || "Flexible"}
+                        ${tutorSkill.availability || "Flexible"}
                     </span>
                 </div>
                 <div class="stars">
-                    ${skill.rating || 0}
+                    ${tutorSkill.rating || 0}
                     <i class="fa fa-star"></i>
                 </div>
             </div>
@@ -146,9 +174,11 @@ function renderSkills(skills) {
 
         // click event (optional)
         card.addEventListener("click", () => {
-            window.location.href = `skill-preview.html?email=${encodeURIComponent(skill.tutor_email)}&skill=${encodeURIComponent(skill.skill_name)}`;
+            window.location.href = `skill-preview.html?email=${encodeURIComponent(tutorSkill.tutor_email)}&skill=${encodeURIComponent(tutorSkill.skill_name)}`;
         });
         wrapper.appendChild(card);
+        loadingContainer.style.display = "none";
+        wrapper.style.display = "grid";   
     });
 }
 

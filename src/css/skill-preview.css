@@ -7,6 +7,9 @@ body {
     font-family: "Poppins", sans-serif;
     font-style: normal;
 }
+.container {
+    display: none;
+}
 .container .banner {
     height: 180px;
     background-image: url(../../assets/images/skill-profile-banner.png);
@@ -23,7 +26,7 @@ body {
 }
 .container .banner button i {
     font-size: 20px;
-    color: #f3e8ff;
+    color: #ffffff;
 }
 .container .tutorContainer {
     padding: 20px 15px;
@@ -52,7 +55,7 @@ body {
     display: grid;
 }
 .container .tutorContainer .skillProfile .infoContainer .tutorName {
-    color: #f3e8ff;
+    color: #ffffff;
     font-size: 18px;
     font-weight: 500;
     text-transform: capitalize;
@@ -76,7 +79,7 @@ body {
     border-radius: 10px;
     margin-top: 15px;
     background-color: rgba(200, 200, 200, 0.2);
-    color: #f3e8ff;
+    color: #ffffff;
 }
 .container .tutorContainer .rateAndAvail label {
     text-transform: capitalize;
@@ -100,7 +103,7 @@ body {
     border-radius: 10px;
     margin-top: 5px;
     background-color: rgba(200, 200, 200, 0.2);
-    color: #f3e8ff;   
+    color: #ffffff;   
     font-size: 14px;
 }
 .container .tutorContainer .buttonWrapper {
@@ -116,4 +119,28 @@ body {
     font-weight: 500;
     outline: none;
     border: 0px;
+}
+.loadingContainer {
+    position: absolute;
+    height: 100Vh;
+    width: 100%;
+    background-color: #1a282d;
+    z-index: 2;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.loadingContainer .spinner {
+    width: 50px;
+    height: 43px;
+    border: 4px solid #a370f7;
+    border-top: 4px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

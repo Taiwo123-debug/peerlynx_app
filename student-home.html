@@ -50,7 +50,11 @@
                 <span>Recommended</span> <a href="all-recommendations.html">See all</a>
             </div>
 
-            <div class="recommendationsWrapper"></div>
+            <div class="recommendationsWrapper">
+                <div class="loadingContainer">
+                    <div class="spinner"></div>
+                </div>
+            </div>
         </div>
         
     </div>
@@ -80,6 +84,8 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/universal-sentence-encoder"></script>
     <script type="module" src="src/js/student-home.js"></script>
 </body>
 </html>
